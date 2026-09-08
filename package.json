@@ -1,0 +1,44 @@
+{
+  "name": "mengistu-furniture",
+  "version": "1.0.0",
+  "description": "Mengistu Furniture — public business website + secure admin management system (Node.js, Express, PostgreSQL).",
+  "main": "backend/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "db:schema": "node backend/scripts/runSchema.js",
+    "db:seed": "node backend/scripts/seed.js",
+    "db:reset": "node backend/scripts/runSchema.js && node backend/scripts/seed.js",
+    "create:admin": "node backend/scripts/createAdmin.js"
+  },
+  "keywords": [
+    "furniture",
+    "ethiopia",
+    "express",
+    "postgresql",
+    "mengistu"
+  ],
+  "author": "Mengistu Furniture",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.3.0",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

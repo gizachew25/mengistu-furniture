@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture Catalogue — Mengistu Furniture</title>
+  <meta name="description" content="Browse ready-made sofas, beds, dining tables, bufies and cabinets from Mengistu Furniture. Search, filter and find the perfect piece for your home.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 data-i18n="nav.furniture">Our Furniture</h1>
+      <p class="crumbs"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.furniture">Furniture</span></p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <!-- Category pills -->
+      <div class="cat-pills" id="catPills" style="justify-content:flex-start;margin-bottom:22px"></div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="searchInput" placeholder="Search furniture…" aria-label="Search furniture">
+        </div>
+        <select id="sortSelect" aria-label="Sort">
+          <option value="newest">Newest first</option>
+          <option value="price_low">Price: Low to High</option>
+          <option value="price_high">Price: High to Low</option>
+          <option value="name_az">Name: A–Z</option>
+        </select>
+        <select id="availSelect" aria-label="Availability">
+          <option value="">All items</option>
+          <option value="true">Available only</option>
+        </select>
+      </div>
+
+      <p class="result-meta" id="resultMeta">Loading furniture…</p>
+
+      <div class="product-grid" id="grid">
+        <div class="skeleton sk-card"></div><div class="skeleton sk-card"></div>
+        <div class="skeleton sk-card"></div><div class="skeleton sk-card"></div>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <!-- Product detail modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

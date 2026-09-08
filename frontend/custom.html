@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Furniture — Mengistu Furniture</title>
+  <meta name="description" content="Custom-made furniture built to your design, size, materials and style by Mengistu Furniture in Yeduha Town.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 data-i18n="nav.custom">Custom Furniture</h1>
+      <p class="crumbs"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.custom">Custom Furniture</span></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split__media">
+          <img src="assets/seed/8Main.jpg" alt="Custom wardrobe crafted by Mengistu Furniture" loading="lazy">
+        </div>
+        <div>
+          <span class="kicker" style="color:var(--orange-600);font-weight:600">Made by appointment</span>
+          <h2>Furniture designed around your life</h2>
+          <p class="muted">Have a specific furniture design in mind? Meet with Mengistu Furniture and create furniture according to your preferred design, size, materials and style. Every piece is built by hand in our Yeduha workshop.</p>
+          <ul class="checklist">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Share your idea or a reference photo</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>We agree on materials, size, finish and price</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>We build it and deliver it to your home</span></li>
+          </ul>
+          <a href="appointment.html" class="btn btn--primary" data-i18n="btn.bookCustom">Book Custom Furniture</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section bg-cream2">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">How it works</span>
+        <h2>From idea to finished piece</h2>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
+          <h3>1 · Share your design</h3>
+          <p class="muted">Tell us what you want to build and, if you have one, upload a reference photo.</p>
+        </div>
+        <div class="info-card">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10l1 7a6 6 0 0 1-12 0Z"/></svg></div>
+          <h3>2 · Agree the details</h3>
+          <p class="muted">We confirm the size, materials, finish, timeline and a fair price in ETB.</p>
+        </div>
+        <div class="info-card">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></div>
+          <h3>3 · We build &amp; deliver</h3>
+          <p class="muted">Our craftsmen build your piece by hand and deliver it ready to enjoy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery of custom work -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Recent work</span>
+        <h2>Some of what we’ve built</h2>
+      </div>
+      <div class="product-grid" id="customGallery"></div>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+</html>

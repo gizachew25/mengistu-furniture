@@ -1,0 +1,60 @@
+# ── Mengistu Furniture — full stack (PostgreSQL + Node/Express app) ──────────
+# Usage:
+#   1. cp .env.example .env   (edit secrets — at minimum JWT_SECRET and passwords)
+#   2. docker compose up --build
+#   3. First run only, in another terminal:  docker compose exec app npm run db:reset
+#   4. Open http://localhost:4000  (admin at /admin)
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${PGUSER:-mengistu}
+      POSTGRES_PASSWORD: ${PGPASSWORD:-mengistu_secret}
+      POSTGRES_DB: ${PGDATABASE:-mengistu_furniture}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PGUSER:-mengistu} -d ${PGDATABASE:-mengistu_furniture}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    # Exposed for local inspection; remove in production if not needed.
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      APP_URL: ${APP_URL:-http://localhost:4000}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:4000}
+      # Point the app at the compose database service by hostname "db"
+      DATABASE_URL: postgresql://${PGUSER:-mengistu}:${PGPASSWORD:-mengistu_secret}@db:5432/${PGDATABASE:-mengistu_furniture}
+      PGSSL: "false"
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in your .env}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-2h}
+      COOKIE_NAME: ${COOKIE_NAME:-mf_session}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-5}
+      UPLOAD_DIR: uploads
+      SEED_ADMIN_NAME: ${SEED_ADMIN_NAME:-Mengistu Teshome}
+      SEED_ADMIN_EMAIL: ${SEED_ADMIN_EMAIL:-mengistuteshome@gmail.com}
+      SEED_ADMIN_PHONE: ${SEED_ADMIN_PHONE:-+251970801754}
+      SEED_ADMIN_PASSWORD: ${SEED_ADMIN_PASSWORD:-ChangeMe#2026}
+      BUSINESS_TELEBIRR_NUMBER: ${BUSINESS_TELEBIRR_NUMBER:-+251970801754}
+    ports:
+      - "4000:4000"
+    volumes:
+      # Persist uploaded product/appointment images outside the container
+      - uploads_data:/app/uploads
+
+volumes:
+  db_data:
+  uploads_data:

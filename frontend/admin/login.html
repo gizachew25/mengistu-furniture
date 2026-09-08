@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Mengistu Furniture</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="auth-wrap">
+    <div class="auth-side">
+      <a href="../index.html" class="brand" style="text-decoration:none">
+        <img src="../assets/logo.png" alt="Mengistu Furniture">
+      </a>
+      <h2>Mengistu Furniture</h2>
+      <p>Management console — manage your products, appointments, inquiries and website settings in one secure place.</p>
+      <ul class="checklist">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Publish furniture that appears instantly on your site</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Approve or reject custom appointment requests</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Respond to customer inquiries</span></li>
+      </ul>
+    </div>
+
+    <div class="auth-main">
+      <div class="auth-card">
+        <div class="auth-logo-sm">
+          <img src="../assets/logo.png" alt="Mengistu Furniture">
+          <b class="brand__name">Mengistu Furniture</b>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="loginView">
+          <h1>Welcome back</h1>
+          <p class="muted" style="margin-bottom:26px">Sign in to your admin account.</p>
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="username" required>
+              <div class="error">Enter a valid email.</div>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="pw-wrap">
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+                <button type="button" class="pw-toggle" data-target="password" aria-label="Show password">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="error">Password is required.</div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block" id="loginBtn">Sign in</button>
+          </form>
+          <p class="muted" style="text-align:center;margin-top:18px;font-size:.86rem">
+            <a href="../index.html">← Back to website</a>
+          </p>
+        </div>
+
+        <!-- FIRST-RUN SETUP -->
+        <div id="setupView" style="display:none">
+          <h1>Create your admin</h1>
+          <p class="muted" style="margin-bottom:26px">No administrator exists yet. Create the first (super admin) account to get started.</p>
+          <form id="setupForm" novalidate>
+            <div class="field">
+              <label for="s_name">Full name</label>
+              <input type="text" id="s_name" name="name" required>
+              <div class="error">Name is required.</div>
+            </div>
+            <div class="field">
+              <label for="s_email">Email</label>
+              <input type="email" id="s_email" name="email" required>
+              <div class="error">Enter a valid email.</div>
+            </div>
+            <div class="field">
+              <label for="s_phone">Phone <span class="muted" style="font-weight:400">(optional)</span></label>
+              <input type="tel" id="s_phone" name="phone">
+            </div>
+            <div class="field">
+              <label for="s_password">Password</label>
+              <div class="pw-wrap">
+                <input type="password" id="s_password" name="password" required>
+                <button type="button" class="pw-toggle" data-target="s_password" aria-label="Show password">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="hint">At least 8 characters.</div>
+              <div class="error">Password must be at least 8 characters.</div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block" id="setupBtn">Create account &amp; sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

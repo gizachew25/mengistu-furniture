@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Custom Furniture — Mengistu Furniture</title>
+  <meta name="description" content="Request a custom furniture appointment with Mengistu Furniture. Tell us your design, size and style and we'll build it by hand.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 data-i18n="section.custom">Book Custom Furniture</h1>
+      <p class="crumbs"><a href="index.html" data-i18n="nav.home">Home</a> / <span data-i18n="nav.appointments">Appointments</span></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split" style="align-items:flex-start">
+        <!-- Left: pitch + tracker -->
+        <div>
+          <span class="kicker" style="color:var(--orange-600);font-weight:600">Made by appointment</span>
+          <h2>Furniture built around you</h2>
+          <p class="muted">Have a specific furniture design in mind? Meet with Mengistu Furniture and create furniture according to your preferred design, size, materials and style. Fill in the form and we’ll get back to you to confirm your appointment.</p>
+          <ul class="checklist">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Sofas, beds, dining sets, wardrobes, bufies and more</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Attach a reference photo of the design you like</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>You’ll receive a booking reference to track your request</span></li>
+          </ul>
+
+          <div class="form-card" style="margin-top:20px;padding:24px">
+            <h3 style="font-size:1.1rem">Track an existing request</h3>
+            <p class="muted" style="font-size:.88rem">Enter your booking reference (e.g. MF-AB12CD) to check its status.</p>
+            <div class="util-row" style="align-items:stretch">
+              <input type="text" id="trackRef" placeholder="MF-XXXXXX" style="text-transform:uppercase" aria-label="Booking reference">
+              <button class="btn btn--choco" id="trackBtn">Track</button>
+            </div>
+            <div id="trackResult" style="margin-top:14px"></div>
+          </div>
+        </div>
+
+        <!-- Right: appointment form -->
+        <div class="form-card">
+          <h3 style="font-size:1.3rem;margin-bottom:4px">Appointment request</h3>
+          <p class="muted" style="font-size:.9rem;margin-bottom:20px">Fields marked <span class="req">*</span> are required.</p>
+
+          <form id="apptForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="customer_name">Full name <span class="req">*</span></label>
+                <input type="text" id="customer_name" name="customer_name" required maxlength="120">
+                <div class="error">Please enter your full name.</div>
+              </div>
+              <div class="field">
+                <label for="phone">Phone number <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="+2519… or 09…">
+                <div class="error">Please enter a valid phone number.</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="muted" style="font-weight:400">(optional)</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+              <div class="error">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="furniture_type">Furniture type <span class="req">*</span></label>
+                <select id="furniture_type" name="furniture_type" required>
+                  <option value="">Choose a type…</option>
+                  <option>Sofa Set</option>
+                  <option>Bed</option>
+                  <option>Dining Table</option>
+                  <option>Chairs</option>
+                  <option>Bufie / Cabinet</option>
+                  <option>Wardrobe</option>
+                  <option>TV Stand / Wall Unit</option>
+                  <option>Door</option>
+                  <option>Other Custom Piece</option>
+                </select>
+                <div class="error">Please choose a furniture type.</div>
+              </div>
+              <div class="field">
+                <label for="preferred_date">Preferred date <span class="req">*</span></label>
+                <input type="date" id="preferred_date" name="preferred_date" required>
+                <div class="error">Please choose a date.</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="preferred_time">Preferred time</label>
+              <select id="preferred_time" name="preferred_time">
+                <option value="">Any time</option>
+                <option>Morning (9:00–12:00)</option>
+                <option>Afternoon (12:00–3:00)</option>
+                <option>Late afternoon (3:00–6:00)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="description">Describe the furniture you want <span class="req">*</span></label>
+              <textarea id="description" name="description" required maxlength="3000" placeholder="Size, colour, materials, style, quantity…"></textarea>
+              <div class="error">Please describe what you'd like us to build.</div>
+            </div>
+
+            <div class="field">
+              <label>Reference image <span class="muted" style="font-weight:400">(optional)</span></label>
+              <div class="upload-drop" id="dropZone">
+                <div class="ico"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg></div>
+                <p style="margin:0"><b>Tap to upload</b> a photo of a design you like</p>
+                <small class="muted">JPG, PNG or WebP · up to 5 MB</small>
+                <input type="file" id="reference_image" name="reference_image" accept="image/jpeg,image/png,image/webp" hidden>
+              </div>
+              <div class="preview-grid" id="refPreview"></div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Additional notes <span class="muted" style="font-weight:400">(optional)</span></label>
+              <textarea id="notes" name="notes" maxlength="2000" style="min-height:80px"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block" id="submitBtn">Submit appointment request</button>
+          </form>
+
+          <!-- Success panel -->
+          <div id="successPanel" style="display:none;text-align:center;padding:20px 0">
+            <div style="width:70px;height:70px;margin:0 auto 16px;border-radius:50%;background:var(--green-bg);display:grid;place-items:center;color:var(--green)">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h3>Request submitted!</h3>
+            <p class="muted">Your appointment request has been submitted successfully. We will contact you soon.</p>
+            <p style="margin:16px 0">Your booking reference:</p>
+            <p style="font-family:var(--font-head);font-size:1.8rem;color:var(--orange-600);letter-spacing:1px" id="successRef">MF-XXXXXX</p>
+            <p class="muted" style="font-size:.86rem">Keep this reference to track your request.</p>
+            <button class="btn btn--outline btn--sm" onclick="location.reload()" style="margin-top:12px">Submit another request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/appointment.js"></script>
+</body>
+</html>

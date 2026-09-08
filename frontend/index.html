@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mengistu Furniture — Stylish Homes • Better Living | Yeduha, Ethiopia</title>
+  <meta name="description" content="Quality ready-made and custom furniture in Yeduha Town, East Gojam. Sofas, beds, dining tables, bufies and bespoke pieces handcrafted to your design.">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="site-header-mount"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="assets/seed/2.jpg" alt="Mengistu Furniture sofa set on display" fetchpriority="high">
+    </div>
+    <div class="container">
+      <div class="hero__inner">
+        <span class="hero__eyebrow">Handcrafted in Yeduha, Ethiopia</span>
+        <h1>Stylish Homes <span class="amp">•</span> Better Living</h1>
+        <p class="hero__lead" data-i18n="hero.lead">
+          Quality ready-made and custom furniture, handcrafted in Yeduha Town. From sofas and beds to
+          bespoke pieces built to your exact design.
+        </p>
+        <div class="hero__actions">
+          <a href="products.html" class="btn btn--primary" data-i18n="btn.explore">Explore Furniture</a>
+          <a href="custom.html" class="btn btn--ghost-light" data-i18n="btn.bookCustom">Book Custom Furniture</a>
+          <a href="tel:+251970801754" class="btn btn--ghost-light" data-i18n="btn.call">Call Us</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat"><b id="statProducts">—</b><span>Pieces in our catalogue</span></div>
+          <div class="stat"><b>7+</b><span>Furniture categories</span></div>
+          <div class="stat"><b>100%</b><span>Made to your taste</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section class="feature-strip">
+    <div class="container">
+      <div class="feature">
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
+        <div><b>Solid, lasting build</b><small>Real hardwood craftsmanship</small></div>
+      </div>
+      <div class="feature">
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76Z"/></svg></span>
+        <div><b>Custom-made</b><small>Your design, size &amp; style</small></div>
+      </div>
+      <div class="feature">
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z"/><path d="m3.09 8.84 12.35-6.61M12 22V12"/></svg></span>
+        <div><b>Fair local prices</b><small>Priced in Ethiopian Birr</small></div>
+      </div>
+      <div class="feature">
+        <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+        <div><b>Easy to reach</b><small>Call or visit our workshop</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Browse by room</span>
+        <h2>Furniture for every space</h2>
+        <p>Explore our ready-made collection or ask us to build something unique for your home.</p>
+      </div>
+      <div class="cat-pills" id="homeCats"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section bg-cream2 section--tight" style="padding-top:40px">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Popular right now</span>
+        <h2 data-i18n="section.featured">Featured Furniture</h2>
+        <p data-i18n="section.featuredSub">A selection of our most-loved pieces, ready for your home.</p>
+      </div>
+      <div class="product-grid" id="featuredGrid"></div>
+      <div class="text-center" style="margin-top:40px">
+        <a href="products.html" class="btn btn--choco">View all furniture</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="split__media">
+          <img src="assets/seed/best-hand-design.jpg" alt="Hand-carved custom bed by Mengistu Furniture" loading="lazy">
+        </div>
+        <div>
+          <span class="kicker" style="color:var(--orange-600);font-weight:600">Made by appointment</span>
+          <h2 data-i18n="section.custom">Have a design in mind?</h2>
+          <p class="muted">
+            Meet with Mengistu Furniture and create furniture according to your preferred design, size,
+            materials and style. We build it by hand, exactly the way you imagined it.
+          </p>
+          <ul class="checklist">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Choose your own materials, finish and dimensions</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Share a reference photo — we match your vision</span></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Get a booking reference and track your request</span></li>
+          </ul>
+          <a href="appointment.html" class="btn btn--primary" data-i18n="btn.bookCustom">Book Custom Furniture</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELEBIRR -->
+  <section class="section bg-cream2">
+    <div class="container">
+      <div class="telebirr">
+        <div>
+          <span class="telebirr__badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            Telebirr Payment
+          </span>
+          <h2>Pay easily with Telebirr</h2>
+          <p class="muted">Reserve or pay for your furniture using Telebirr. Send your payment to the number below, then share your confirmation with us to complete your order.</p>
+          <p class="telebirr__num" id="telebirrNumber">+251970801754</p>
+          <p class="muted" style="font-size:.9rem">After paying, keep your transaction message — we’ll confirm your order right away.</p>
+          <a href="contact.html" class="btn btn--choco btn--sm">Confirm a payment</a>
+        </div>
+        <div class="telebirr__qr">
+          <div class="qr-frame" id="telebirrQr">
+            <div>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v7M17 21h4M14 21h0"/></svg>
+              <p style="font-size:.78rem;margin:.5rem 0 0">QR code<br>(configurable)</p>
+            </div>
+          </div>
+          <small class="muted">Scan to pay via Telebirr</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer-mount"></div>
+
+  <!-- Product detail modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
